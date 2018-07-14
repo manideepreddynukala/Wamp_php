@@ -1,0 +1,42 @@
+Getting Started
+-------------------
+
+1) Download Wamp server and install under C drive.(x64 version)
+2) Run that application(It'll run in background)
+3) Goto localhost/. You'll see wampserver page.
+4) Click on phpmyadmin. Login using userid 'root'.Password is blank.
+5) Click on databases and create a new database. Give database name(manideep_db). Leave collation as it is. You'll see a new db being created
+on left hand side.
+6) If you goto Privileges, you can see all the users and host names.
+7) Now, we have to connect to our database using php code. Write below code in a separate text file. Save it and palce it under C:\wamp64\www as
+.php file.
+
+<html>							---------
+<head>									|
+<title>Database</title>					|
+</head>									|   ------->  HTML CODE
+<body>									|
+<h1>Database connection</h1>			|
+</body>									|
+</html>							---------
+
+<php
+$con = mysql_connect("localhost","root",""); //host name, user name, password
+$connection = mysql_select_db("manideep_db",$con); //database name
+?>
+
+8) Goto localhost/demo.php to test the result.
+
+
+
+
+
+
+Create a table on Database
+---------------------------
+
+1) Click on your db once you go to phpmyadmin.
+2) It'll give you an option to create a table.
+3) Give the name of db table(table_1) and give the number of fields required(6).
+4) In the next page, it'll give an option to enter the field name, type, length, default, collation(leave it), attributes(leave it),
+Null index.

@@ -1,0 +1,37 @@
+1)#1089 - Incorrect prefix key; the used key part isn't a string, the used length is longer than the key part, or the storage engine doesn't 
+support unique prefix keys.
+after selecting PRIMARY KEY when you create table, don't input any value in pop dialog
+
+2)When to use single quotes, double quotes, and back ticks in MySQL
+https://stackoverflow.com/questions/11321491/when-to-use-single-quotes-double-quotes-and-back-ticks-in-mysql
+
+3)Unknown column 'name' in 'field list'
+Check the names of your column
+                                    back quotes are important
+												|
+												|
+												|
+												|
+												|
+											|________|	
+$run=mysqli_query($conn, "INSERT INTO `table_1` (`id`, `name`, `gender`, `dob`,`mobile`,`password`) -->These names should be same as your table column names
+                    VALUES ('$id', '$name', '$gender', '$dob','$mobile','$password')");
+					
+					
+					
+4) Deprecated: mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead
+The way with MySQLi would be like this:
+
+<?php
+$connection = mysqli_connect('localhost', 'username', 'password', 'database');
+To run database queries is also simple and nearly identical with the old way:
+
+<?php
+// Old way
+mysql_query('CREATE TEMPORARY TABLE `table`', $connection);
+// New way
+mysqli_query($connection, 'CREATE TEMPORARY TABLE `table`');
+Turn off all deprecated warnings including them from mysql_*:
+
+<?php
+error_reporting(E_ALL ^ E_DEPRECATED);
